@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Simple Sum Calculator</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+   <div class="flex items-center space-x-4 mb-6">
+      <h1 id="num1" class="text-8xl font-semibold">0</h1>
+      <span class="text-8xl font-semibold text-red-600">+</span>
+      <h1 id="num2" class="text-8xl font-semibold">0</h1>
+   </div>
+
+   <button id="calculateButton" class="bg-red-700 px-10 py-4 rounded-lg text-white text-xl hover:bg-red-800 focus:ring focus:ring-red-500 transition">
+      Calculate Sum
+   </button>
+
+   <h1 id="num3" class="text-8xl font-semibold mt-6">0</h1>
+
+
+   <script>
+
+      let num1 = document.querySelector("#num1");
+      let num2 = document.querySelector("#num2");
+      let num3 = document.querySelector("#num3");
+      let ptn = document.querySelector("#ptn")
+      num1.innerHTML = prompt("Please enter  number 1");
+      num2.innerHTML  = prompt("Please enter number 2");
+     
+      calculateButton.addEventListener("click", () => {
+        
+         num3.innerHTML = parseInt(num1.innerHTML) + parseInt(num2.innerHTML);
+         num1.innerHTML = 0;
+         num2.innerHTML = 0;
+      })
+   
+   </script>
+</body>
+</html>

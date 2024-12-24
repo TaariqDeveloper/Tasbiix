@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+   <h1 id="num" class="text-8xl text-center pt-40 font-semibold">0</h1>
+   <div class="flex justify-center gap-7">
+      <button class="bg-green-700 px-14 py-4 mt-4 rounded-lg text-white text-3xl " id="increment">increment</button>
+      <button class="bg-blue-700 px-14 py-4 mt-4 rounded-lg text-white  text-3xl " id="decriment">decriment</button>
+      <button class="bg-red-700 px-14 py-4 mt-4 rounded-lg text-white  text-3xl" id="reset">reset</button>
+   </div>
+  
+   
+
+
+   <script>
+    
+    let num = document.querySelector("#num")
+    let increment = document.querySelector("#increment")
+    let decriment = document.querySelector("#decriment")
+    let reset = document.querySelector("#reset")
+
+
+    let startValue = 0;
+
+    increment.addEventListener("click", ()=>{
+     
+       startValue++;
+       num.textContent = startValue
+
+       if (num.textContent == 10){
+         num.style.color = "blue"
+      }
+      else{
+          num.style.color = "black"
+      }
+    })
+
+    increment.addEventListener("mouseover", ()=>{
+       increment.style.backgroundColor = "red"
+    })
+    increment.addEventListener("mouseout", ()=>{
+       increment.style.backgroundColor = "green"
+    })
+
+
+    decriment.addEventListener("mouseover", ()=>{
+       decriment.style.backgroundColor = "red"
+    })
+    decriment.addEventListener("mouseout", ()=>{
+       decriment.style.backgroundColor = "blue"
+    })
+
+
+
+    reset.addEventListener("mouseover", ()=>{
+       reset.style.backgroundColor = "blue"
+    })
+    reset.addEventListener("mouseout", ()=>{
+       reset.style.backgroundColor = "red"
+    })
+
+
+    
+
+
+    decriment.addEventListener("click", ()=>{
+     
+      
+      if  (num.textContent > 0){
+         startValue--;
+         num.textContent = startValue
+      }
+
+      if (num.textContent == 10){
+         num.style.color = "blue"
+      }
+      else{
+          num.style.color = "black"
+      }
+     
+      
+      
+    })
+    
+    reset.addEventListener("click", ()=>{
+       startValue = 0;
+       num.textContent = startValue
+       
+    })
+
+
+
+
+
+   //  increment.addEventListener("click", function(){
+   //     num.textContent = parseInt(num.textContent) + 1
+   //  })
+    
+
+     
+      
+
+
+      
+   </script>
+</body>
+</html>
